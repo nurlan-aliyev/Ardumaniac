@@ -1,17 +1,19 @@
 {
+  "name": "Ardunet",
+  "displayName": "Ardunet",
   "expo": {
-    "name": "ardumaniac",
-    "slug": "ardumaniac",
+    "name": "Ardunet",
+    "slug": "ardunet",
     "platforms": [
       "ios",
       "android",
       "web"
     ],
-    "version": "1.0.0",
+    "version": "1.0.1",
     "orientation": "portrait",
-    "icon": "./assets/icon_new.png",
+    "icon": "./assets/icon.png",
     "splash": {
-      "image": "./assets/splash_logo.png",
+      "image": "./assets/splash.png",
       "resizeMode": "contain",
       "backgroundColor": "#00979d"
     },
@@ -22,7 +24,18 @@
       "**/*"
     ],
     "ios": {
-      "supportsTablet": true
-    }
+      "supportsTablet": false,
+      "bundleIdentifier": "site.ardumaniac.ardumaniac",
+      "buildNumber": "1.0.0"
+    },
+    "android": {
+      "package": "site.ardumaniac.ardumaniac",
+      "versionCode": 2,
+      "config": {
+        "googleMobileAdsAppId": "ca-app-pub-4610355671419976~1327858183"
+      }
+    },
+    "entryPoint": "node_modules/expo/AppEntry.js",
+    "description": ""
   }
 }

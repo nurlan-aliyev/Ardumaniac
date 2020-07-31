@@ -1,6 +1,10 @@
 import React from 'react'
-import { View, Text, ScrollView, Image, Dimensions, SafeAreaView } from 'react-native'
+import { View, SafeAreaView } from 'react-native'
 import { createDrawerNavigator } from '@react-navigation/drawer';
+import {
+    AdMobBanner,
+    setTestDeviceIDAsync,
+} from 'expo-ads-admob';
 
 import Markdown from 'react-native-showdown';
 
@@ -8,7 +12,6 @@ import WhatsArduino from './WhatsArduino.js'
 import Microcontrollers from './Microcontrollers.js'
 import ArduinoIDE from './ArduinoIDE.js'
 import ArduinoConnect from './ArduinoConnect.js'
-
 import Structure from './Structure.js'
 import Variables from './Variables.js'
 import Datatypes from './Datatypes.js'
@@ -19,8 +22,7 @@ import DigitalIO from './Digitalio.js'
 import AnalogIO from './Analogio.js'
 import NecessaryFunctions from './NecessaryFunctions.js'
 
-const screenWidth = Math.round(Dimensions.get("window").width);
-const screenHeight = Math.round(Dimensions.get("window").height);
+
 
 const css = `
     h1{margin-left: 5px; margin-bottom: 0px;}
@@ -38,126 +40,173 @@ const css = `
     `;
 
 
-//ca-app-pub-4610355671419976~1327858183
-//ca-app-pub-4610355671419976/7701694842
-const PartOne = () => {
-
-    return (
-        <SafeAreaView style={{ flex: 1 }}>
-            <Markdown markdown={WhatsArduino} css={css} />
-        </SafeAreaView>
-    )
-}
-const PartTwo = () => {
-    return (
-        <SafeAreaView style={{ flex: 1 }}>
-            <Markdown markdown={Microcontrollers} css={css} />
-        </SafeAreaView>
-    )
-}
-
-const PartThree = () => {
-    return (
-        <SafeAreaView style={{ flex: 1 }}>
-            <Markdown markdown={ArduinoConnect} css={css} />
-        </SafeAreaView>
-    )
-}
-const PartFour = () => {
-    return (
-        <SafeAreaView style={{ flex: 1 }}>
-            <Markdown markdown={ArduinoIDE} css={css} />
-        </SafeAreaView>
-    )
-}
-
-const PartFive = () => {
-    return (
-        <SafeAreaView style={{ flex: 1 }}>
-            <Markdown markdown={Structure} css={css} />
-        </SafeAreaView>
-    )
-}
-const PartSix = () => {
-    return (
-        <SafeAreaView style={{ flex: 1 }}>
-            <Markdown markdown={Variables} css={css} />
-        </SafeAreaView>
-    )
-}
-const PartSeven = () => {
-    return (
-        <SafeAreaView style={{ flex: 1 }}>
-            <Markdown markdown={Datatypes} css={css} />
-        </SafeAreaView>
-    )
-}
-const PartEight = () => {
-    return (
-        <SafeAreaView style={{ flex: 1 }}>
-            <Markdown markdown={Operators} css={css} />
-        </SafeAreaView>
-    )
-}
-const PartNine = () => {
-    return (
-        <SafeAreaView style={{ flex: 1 }}>
-            <Markdown markdown={Constants} css={css} />
-        </SafeAreaView>
-    )
-}
-const PartTen = () => {
-    return (
-        <SafeAreaView style={{ flex: 1 }}>
-            <Markdown markdown={Flowchart} css={css} />
-        </SafeAreaView>
-    )
-}
-const PartEleven = () => {
-    return (
-        <SafeAreaView style={{ flex: 1 }}>
-            <Markdown markdown={DigitalIO} css={css} />
-        </SafeAreaView>
-    )
-}
-const PartTwelve = () => {
-    return (
-        <SafeAreaView style={{ flex: 1 }}>
-            <Markdown markdown={AnalogIO} css={css} />
-        </SafeAreaView>
-    )
-}
-const PartThirteen = () => {
-    return (
-        <SafeAreaView style={{ flex: 1 }}>
-            <Markdown markdown={NecessaryFunctions} css={css} />
-        </SafeAreaView>
-    )
-}
-
-
 const Drawer = createDrawerNavigator()
 
 export default class SubjectScreen extends React.Component {
+
+    initAds = async () => {
+        await setTestDeviceIDAsync('EMULATOR');
+    }
+
+    bannerError(e) {
+        console.log('banner error: ');
+        console.log(e);
+    }
+    bannerAdReceived = () => {
+        console.log('banner ad received: ');
+    }
+
+    PartOne = () => {
+        return (
+            <SafeAreaView style={{ flex: 1 }}>
+                <Markdown markdown={WhatsArduino} css={css} />
+                <View style={{ height: 'auto' }}>
+                    <AdMobBanner
+                        bannerSize="fullBanner"
+                        adUnitID="ca-app-pub-4610355671419976/7701694842"
+                        onDidFailToReceiveAdWithError={this.bannerError}
+                        onAdViewDidReceiveAd={this.bannerAdReceived} />
+                </View>
+            </SafeAreaView>
+        )
+    }
+
+    PartTwo = () => {
+        return (
+            <SafeAreaView style={{ flex: 1 }}>
+                <Markdown markdown={Microcontrollers} css={css} />
+            </SafeAreaView>
+        )
+    }
+
+    PartThree = () => {
+        return (
+            <SafeAreaView style={{ flex: 1 }}>
+                <Markdown markdown={ArduinoConnect} css={css} />
+                <AdMobBanner
+                    bannerSize="fullBanner"
+                    adUnitID="ca-app-pub-4610355671419976/3659342203"
+                    onDidFailToReceiveAdWithError={this.bannerError.bind(this)}
+                    onAdViewDidReceiveAd={this.bannerAdReceived} />
+            </SafeAreaView>
+        )
+    }
+    PartFour = () => {
+        return (
+            <SafeAreaView style={{ flex: 1 }}>
+                <Markdown markdown={ArduinoIDE} css={css} />
+            </SafeAreaView>
+        )
+    }
+
+    PartFive = () => {
+        return (
+            <SafeAreaView style={{ flex: 1 }}>
+                <Markdown markdown={Structure} css={css} />
+                <AdMobBanner
+                    bannerSize="fullBanner"
+                    adUnitID="ca-app-pub-4610355671419976/6867959473"
+                    onDidFailToReceiveAdWithError={this.bannerError}
+                    onAdViewDidReceiveAd={this.bannerAdReceived} />
+            </SafeAreaView>
+        )
+    }
+    PartSix = () => {
+        return (
+            <SafeAreaView style={{ flex: 1 }}>
+                <Markdown markdown={Variables} css={css} />
+            </SafeAreaView>
+        )
+    }
+    PartSeven = () => {
+        return (
+            <SafeAreaView style={{ flex: 1 }}>
+                <Markdown markdown={Datatypes} css={css} />
+                <AdMobBanner
+                    bannerSize="fullBanner"
+                    adUnitID="ca-app-pub-4610355671419976/8720097198"
+                    onDidFailToReceiveAdWithError={this.bannerError}
+                    onAdViewDidReceiveAd={this.bannerAdReceived} />
+            </SafeAreaView>
+        )
+    }
+    PartEight = () => {
+        return (
+            <SafeAreaView style={{ flex: 1 }}>
+                <Markdown markdown={Operators} css={css} />
+            </SafeAreaView>
+        )
+    }
+    PartNine = () => {
+        return (
+            <SafeAreaView style={{ flex: 1 }}>
+                <Markdown markdown={Constants} css={css} />
+            </SafeAreaView>
+        )
+    }
+    PartTen = () => {
+        return (
+            <SafeAreaView style={{ flex: 1 }}>
+                <Markdown markdown={Flowchart} css={css} />
+                <AdMobBanner
+                    bannerSize="fullBanner"
+                    adUnitID="ca-app-pub-4610355671419976/4351383448"
+                    onDidFailToReceiveAdWithError={this.bannerError}
+                    onAdViewDidReceiveAd={this.bannerAdReceived} />
+            </SafeAreaView>
+        )
+    }
+    PartEleven = () => {
+        return (
+            <SafeAreaView style={{ flex: 1 }}>
+                <Markdown markdown={DigitalIO} css={css} />
+            </SafeAreaView>
+        )
+    }
+    PartTwelve = () => {
+        return (
+            <SafeAreaView style={{ flex: 1 }}>
+                <Markdown markdown={AnalogIO} css={css} />
+                <AdMobBanner
+                    bannerSize="fullBanner"
+                    adUnitID="ca-app-pub-4610355671419976/7954466971"
+                    onDidFailToReceiveAdWithError={this.bannerError}
+                    onAdViewDidReceiveAd={this.bannerAdReceived} />
+            </SafeAreaView>
+        )
+    }
+    PartThirteen = () => {
+        return (
+            <SafeAreaView style={{ flex: 1 }}>
+                <Markdown markdown={NecessaryFunctions} css={css} />
+                <AdMobBanner
+                    bannerSize="fullBanner"
+                    adUnitID="ca-app-pub-4610355671419976/3084627131"
+                    onDidFailToReceiveAdWithError={this.bannerError}
+                    onAdViewDidReceiveAd={this.bannerAdReceived} />
+            </SafeAreaView>
+        )
+    }
+
     render() {
         return (
             <Drawer.Navigator
                 initialRouteName="PartOne"
                 drawerPosition='right'
             >
-                <Drawer.Screen name='Arduino nədir və hardan gəldi?' component={PartOne} />
-                <Drawer.Screen name='Mikrokontrollerlər haqqında' component={PartTwo} />
-                <Drawer.Screen name='Arduinonun qoşulması' component={PartThree} />
-                <Drawer.Screen name='Arduino IDE-nin endirilməsi' component={PartFour} />
-                <Drawer.Screen name='Proqramlaşdırma: Struktur' component={PartFive} />
-                <Drawer.Screen name='Dəyişənlər' component={PartSix} />
-                <Drawer.Screen name='Verilənlərin növləri' component={PartSeven} />
-                <Drawer.Screen name='Operatorlar' component={PartEight} />
-                <Drawer.Screen name='Sabitlər' component={PartNine} />
-                <Drawer.Screen name='Dövr və şərt blokları' component={PartTen} />
-                <Drawer.Screen name='Rəqəmsal giriş/çıxış' component={PartEleven} />
-                <Drawer.Screen name='Analoq giriş/çıxış' component={PartTwelve} />
-                <Drawer.Screen name='Bəzi lazımi funksiyalar' component={PartThirteen} />
+                <Drawer.Screen name='Arduino nədir və hardan gəldi?' component={this.PartOne} />
+                <Drawer.Screen name='Mikrokontrollerlər haqqında' component={this.PartTwo} />
+                <Drawer.Screen name='Arduinonun qoşulması' component={this.PartThree} />
+                <Drawer.Screen name='Arduino IDE-nin endirilməsi' component={this.PartFour} />
+                <Drawer.Screen name='Proqramlaşdırma: Struktur' component={this.PartFive} />
+                <Drawer.Screen name='Dəyişənlər' component={this.PartSix} />
+                <Drawer.Screen name='Verilənlərin növləri' component={this.PartSeven} />
+                <Drawer.Screen name='Operatorlar' component={this.PartEight} />
+                <Drawer.Screen name='Sabitlər' component={this.PartNine} />
+                <Drawer.Screen name='Dövr və şərt blokları' component={this.PartTen} />
+                <Drawer.Screen name='Rəqəmsal giriş/çıxış' component={this.PartEleven} />
+                <Drawer.Screen name='Analoq giriş/çıxış' component={this.PartTwelve} />
+                <Drawer.Screen name='Bəzi lazımi funksiyalar' component={this.PartThirteen} />
             </Drawer.Navigator>
         )
     }
