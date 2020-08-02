@@ -13,7 +13,7 @@
     android:theme="@style/AppTheme"
   >
     <meta-data android:name="expo.modules.updates.EXPO_UPDATE_URL" android:value="https://expo.io/@nurlan-aliyev/ardunet"/>
-    <meta-data android:name="expo.modules.updates.EXPO_SDK_VERSION" android:value="37.0.0"/>
+    <meta-data android:name="expo.modules.updates.EXPO_SDK_VERSION" android:value="38.0.0"/>
     <activity
       android:name=".MainActivity"
       android:label="@string/app_name"
