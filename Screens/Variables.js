@@ -67,9 +67,11 @@ A variable is a way of naming and storing a numerical value for later use by the
 
 Once a variable has been assigned, or re-assigned, you can test its value to see if it meets certain conditions, or you can use its value directly. As an example to illustrate three useful operations with variables, the following code tests whether the <code class="one-line">inputVariable</code> is less than 100, if true it assigns the value 100 to <code class="one-line">inputVariable</code>, and then sets a delay based on <code class="one-line">inputVariable</code> which is now a minimum of 100: 
 
-    if (inputVariable < 100) //tests variable if less than 100
+    if (inputVariable < 100) //tests variable 
+                             //if less than 100
     {
-        inputVariable = 100; //if true assigns value of 100
+        inputVariable = 100; //if true assigns
+                             // value of 100
     }
     delay(inputVariable);    //uses variable as delay
 
@@ -101,10 +103,10 @@ The following example shows how to declare a few different types of variables an
 
     void loop()
     {
-        for (int i = 0; i<20;)// local variable
+        for (int i = 0; i<20;) //local variable
         {
-            i++;              // only can be
-                              // used inside 
+            i++;              //only can be
+                              //used inside 
                               //for loop  
         }
         float f;              //only can be

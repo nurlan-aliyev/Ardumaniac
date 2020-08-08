@@ -117,9 +117,12 @@ Arrays are often used in <code class="one-line">setup()</code> loops, where the 
     void loop()
     {
         for(int i=0; i<7; i++) //loop equals number
-        {                      //of values in array
-            analogWrite(ledPin, flicker[i]); //writes index 
-            delay(200);                      //value pause 200ms
+                               //of values in array
+        {
+            analogWrite(ledPin, flicker[i]); //writes 
+                                             //index 
+                                             //value 
+            delay(200);                 //pause 200ms
         }
     }
 

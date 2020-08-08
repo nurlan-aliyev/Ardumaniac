@@ -63,9 +63,12 @@ Because this is a hardware function, the pin will generate a steady wave after a
 
     void loop()
     {
-        value = analogRead(pin); //sets value equal to pin
-        value /= 4;              //converts 0-1023 to 0-255
-        analogWrite(led, value); //outputs PWM signal to LED
+        value = analogRead(pin); //sets value 
+                                 //equal to pin
+        value /= 4;              //converts 0-1023 
+                                 //to 0-255
+        analogWrite(led, value); //outputs PWM signal
+                                 // to LED
     }
 
 ***

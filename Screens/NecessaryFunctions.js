@@ -123,26 +123,28 @@ Returns the number of milliseconds since the Arduino board began running the cur
 <p class="note">Note: This number will overflow (reset back to zero), after approximately 9 hours.</p> 
 
 #min(x, y)
-Calculates the maximum of two numbers of any data type and returns the larger number. 
+Calculates the minimum of two numbers of any data type and returns the smaller number. 
 
-    value = min(value, 100);  //sets value to the larger 
-                              //of value or 100, ensuring
-                              //that it is at least 100
+    value = min(value, 100);  //sets value 
+                              //to the smaller 
+                              //of value 
+                              //or 100
                           
 
 #max(x, y) 
-Verilən iki ədədi və ya dəyişəni müqayisə edir və böyük olanı çıxışa verir. 
+Calculates the maximum of two numbers of any data type and returns the larger number. 
 
-    value = max(value, 100);  //eger value kiçikdirse
-                              // cavab 100
-                              //eger böyükdürse
-                              // özü olur
+    value = max(value, 100);  //sets value 
+                              //to the larger 
+                              //of value 
+                              //or 100
                           
 
 #randomSeed(seed) 
 Sets a value, or seed, as the starting point for the <code class="one-line">random()</code> function.
 
-    randomSeed(value);  //sets value as the random seed
+    randomSeed(value);  //sets value as 
+                        //the random seed
 
 Because the Arduino is unable to create a truly random number, randomSeeed allows you to place a variable, constant, or other function into the random function, which helps to generate more random <strong>"random"</strong> numbers. There are a variety of different seeds, or functions, that can be used in this function includong millis() or even <code class="one-line">analogRead()</code> to read electrical noise through an analog pin. 
 
@@ -207,7 +209,8 @@ The following simple example takes a reading from analog pin 0 and sends this da
     {
         Serial.println(analogRead(0)); //sends analog 
                                        //value
-        delay(1000);                   //pauses for 1 second
+        delay(1000);                   //pauses for 
+                                       //1 second
     }
 
 ***

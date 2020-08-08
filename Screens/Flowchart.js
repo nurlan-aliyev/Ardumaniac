@@ -181,10 +181,13 @@ The following example starts the integer <code class="one-line">i</code> at 0, t
 
 The following example tests whether <code class="one-line">someVariable</code> is less than 200 and if true executes the statements inside the brackets and will continue looping until 'someVariable' is no longer less than 200. 
 
-    while (someVariable < 200) //tests if less than 200
+    while (someVariable < 200) //tests if 
+                               //less than 200
     {
-        doSomething;          //executes enclosed statements
-        someVariable++;       //increments variable by 1
+        doSomething;          //executes enclosed
+                              //statements
+        someVariable++;       //increments 
+                              //variable by 1
     }
 
 #do... while
@@ -202,7 +205,8 @@ The following example assigns <code class="one-line">readSensors();</code> to th
         x = readSensors();  //assigns the value of
                             //readSensors() to x
         delay(50);          //pauses 50 milliseconds
-    } while (x < 100);      //loops if x is less than 100
+    } while (x < 100);      //loops if x is 
+                            //less than 100
                             
 
 ***

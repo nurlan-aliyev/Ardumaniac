@@ -68,8 +68,9 @@ Arduino digital pins default to inputs, so they don't need to be explicitly decl
 
 There are also convenient 20k pullup resistors built into the Atmega chip can be accessed from software. These built-in pullup resistors are accesed in the following manner: 
 
-    pinMode(pin, INPUT);    //sets pin to input 
-    digitalWrite(pin, HIGH);//turn on pullup resistors
+    pinMode(pin, INPUT);     //sets pin to input 
+    digitalWrite(pin, HIGH); //turn on 
+                             //pullup resistors
 
 Pins configured as <code class="one-line">OUTPUT</code> are said to be in a low-impedance state and can provide 40mA (milliamps) of current to other devices. This is enough current to brightly light up an LED, but not enough current to run most relays, solenids, or motors. 
 
@@ -95,13 +96,16 @@ The following example reads a pushbutton connected to a digitak input and turns 
 
     void setup()
     {
-        pinMode(led, OUTPUT);  //sets pin 13 as OUTPUT
-        pinMode(pin, INPUT);   //sets pin 7 as INPUT
+        pinMode(led, OUTPUT);  //sets pin 13
+                               // as OUTPUT
+        pinMode(pin, INPUT);   //sets pin 7 
+                               //as INPUT
     }
 
     void loop()
     {
-        value = digitalRead(pin);  //sets value equal to
+        value = digitalRead(pin);  //sets value
+                                   //equal to
                                    //the input pin
         digitalWrite(led, value);  //sets led to the
                                    //button's value

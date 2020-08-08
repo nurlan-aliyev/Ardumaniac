@@ -83,13 +83,13 @@ export default class SubjectScreen extends React.Component {
         return (
             <SafeAreaView style={{ flex: 1 }}>
                 <Markdown markdown={WhatsArduino} css={css} />
-                <View style={{ height: 'auto' }}>
+                {/*<View style={{ height: 'auto' }}>
                     <AdMobBanner
                         bannerSize="fullBanner"
                         adUnitID="ca-app-pub-4610355671419976/3223210009"
                         onDidFailToReceiveAdWithError={this.bannerError}
                         onAdViewDidReceiveAd={this.bannerAdReceived} />
-                </View>
+        </View>*/}
             </SafeAreaView>
         )
     }
@@ -106,11 +106,11 @@ export default class SubjectScreen extends React.Component {
         return (
             <SafeAreaView style={{ flex: 1 }}>
                 <Markdown markdown={ArduinoConnect} css={css} />
-                <AdMobBanner
+                {/*<AdMobBanner
                     bannerSize="fullBanner"
                     adUnitID="ca-app-pub-4610355671419976/7701694842"
                     onDidFailToReceiveAdWithError={this.bannerError}
-                    onAdViewDidReceiveAd={this.bannerAdReceived} />
+                    onAdViewDidReceiveAd={this.bannerAdReceived} />*/}
             </SafeAreaView>
         )
     }
@@ -126,11 +126,11 @@ export default class SubjectScreen extends React.Component {
         return (
             <SafeAreaView style={{ flex: 1 }}>
                 <Markdown markdown={Structure} css={css} />
-                <AdMobBanner
+                {/*<AdMobBanner
                     bannerSize="fullBanner"
                     adUnitID="ca-app-pub-4610355671419976/7701694842"
                     onDidFailToReceiveAdWithError={this.bannerError}
-                    onAdViewDidReceiveAd={this.bannerAdReceived} />
+                    onAdViewDidReceiveAd={this.bannerAdReceived} />*/}
             </SafeAreaView>
         )
     }
@@ -145,11 +145,11 @@ export default class SubjectScreen extends React.Component {
         return (
             <SafeAreaView style={{ flex: 1 }}>
                 <Markdown markdown={Datatypes} css={css} />
-                <AdMobBanner
+                {/*<AdMobBanner
                     bannerSize="fullBanner"
                     adUnitID="ca-app-pub-4610355671419976/7701694842"
                     onDidFailToReceiveAdWithError={this.bannerError}
-                    onAdViewDidReceiveAd={this.bannerAdReceived} />
+                    onAdViewDidReceiveAd={this.bannerAdReceived} />*/}
             </SafeAreaView>
         )
     }
@@ -171,11 +171,11 @@ export default class SubjectScreen extends React.Component {
         return (
             <SafeAreaView style={{ flex: 1 }}>
                 <Markdown markdown={Flowchart} css={css} />
-                <AdMobBanner
+                {/*<AdMobBanner
                     bannerSize="fullBanner"
                     adUnitID="ca-app-pub-4610355671419976/7701694842"
                     onDidFailToReceiveAdWithError={this.bannerError}
-                    onAdViewDidReceiveAd={this.bannerAdReceived} />
+                    onAdViewDidReceiveAd={this.bannerAdReceived} />*/}
             </SafeAreaView>
         )
     }
@@ -190,11 +190,11 @@ export default class SubjectScreen extends React.Component {
         return (
             <SafeAreaView style={{ flex: 1 }}>
                 <Markdown markdown={AnalogIO} css={css} />
-                <AdMobBanner
+                {/*<AdMobBanner
                     bannerSize="fullBanner"
                     adUnitID="ca-app-pub-4610355671419976/7701694842"
                     onDidFailToReceiveAdWithError={this.bannerError}
-                    onAdViewDidReceiveAd={this.bannerAdReceived} />
+                    onAdViewDidReceiveAd={this.bannerAdReceived} />*/}
             </SafeAreaView>
         )
     }
@@ -202,11 +202,11 @@ export default class SubjectScreen extends React.Component {
         return (
             <SafeAreaView style={{ flex: 1 }}>
                 <Markdown markdown={NecessaryFunctions} css={css} />
-                <AdMobBanner
+                {/*<AdMobBanner
                     bannerSize="fullBanner"
                     adUnitID="ca-app-pub-4610355671419976/7701694842"
                     onDidFailToReceiveAdWithError={this.bannerError}
-                    onAdViewDidReceiveAd={this.bannerAdReceived} />
+                    onAdViewDidReceiveAd={this.bannerAdReceived} />*/}
             </SafeAreaView>
         )
     }
