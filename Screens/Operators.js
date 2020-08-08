@@ -86,4 +86,71 @@ Aşağıda buna aid bir cədvəl göstərilmişdir, və bu cədvəldən istifad�
 
 `
 
+const OperatorsEN = `
+#Arithmetic
+Arithmetic operators include addition, subtraction, multiplication, and division. They return the sum, difference, product, or quotient (respectively) of two operands. 
+
+    y = y + 3;
+    x = x - 7;
+    i = j * 6;
+    r = r / 5;
+
+The operation is conducted using the data type of the operands, so, for example, 7/2 results in 3 instead of 3.5 since 7 and 2 are ints and are incapable of using decimal points. This also means that the operation can overflow if the result is larger than what can be stored in the data type.
+
+If the operands are of different types, the larger type is used for the calculation. For example, if one of the numbers (operands) are of the type <code class="one-line">float</code> and the other of type <code class="one-line">integer</code>, floating point math will be used for the calculation.
+
+<p class="note">Note: Use the cast operator to convert one variable type to another on the fly. For example, <code class="one-line">a = (int)3.14</code> will set a equal to 3.</p>
+
+#Compound assignments
+Compound assignments combine an arithmetic operation with a variable assignment. These are commonly found in for loops as described later. The most common compound assignments include: 
+
+    x++     //x = x + 1
+    x--     //x = x - 1
+    x += y  //x = x + y
+    x -= y  //x = x - y
+    x *= y  //x = x * y
+    x /= y  //x = x / y
+
+#Comparison operators
+Comparisons of one variable or constant against another are often used in if statements to test if a specified condition is true. In the example found on the following pages, ?? is used to indicate any of the following conditions: 
+
+    x == y  //x is equal to y
+    x != y  //x is not equal to y
+    x <  y  //x is less than y
+    x >  y  //x is greater than y
+    x <= y  //x is less than or equal to y
+    x >= y  //x is greater than or equal to y
+
+#Logical operators
+Logical operators are usually a way to compare two expressions and return a <code class="one-line">TRUE</code> or <code class="one-line">FALSE</code> depending on the operator. There are three logical operators, <strong>AND</strong>, <strong>OR</strong> and <strong>NOT</strong>, that are often used in if statements: 
+
+Logical <strong>AND</strong>: 
+
+    if (x > 0 && x < 5)     //true only if both
+                            //expressions are true
+Logical <strong>OR</strong>:
+
+    if (x > 0 || x < 5)     //true if either
+                            //expression is true
+Logical <strong>NOT</strong>:
+
+    if (!x > 0)             //true only if
+                            //expression is false
+
+
+There is a logical truth table listed below, which can be used later: 
+
+
+|   A   |   B   | A(AND)B | A(OR)B | NOT A | NOT B |
+|:-----:|:-----:|:-------:|:------:|:-----:|:-----:|
+|  TRUE |  TRUE |   TRUE  |  TRUE  | FALSE | FALSE |
+|  TRUE | FALSE |  FALSE  |  TRUE  | FALSE |  TRUE |
+| FALSE |  TRUE |  FALSE  |  TRUE  |  TRUE | FALSE |
+| FALSE | FALSE |  FALSE  |  FALSE |  TRUE |  TRUE |
+
+***
+
+`
+
 export default String(Operators)
+export { OperatorsEN }

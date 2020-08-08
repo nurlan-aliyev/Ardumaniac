@@ -7285,10 +7285,10 @@ expo-sqlite@~8.2.1:
     "@expo/websql" "^1.0.1"
     lodash "^4.17.15"
 
-expo-updates@~0.2.8:
-  version "0.2.13"
-  resolved "https://registry.yarnpkg.com/expo-updates/-/expo-updates-0.2.13.tgz#b2249f0248a504d51c81bcda900954d883b7395b"
-  integrity sha512-txJryKpt7pnXGldFLsqhzNx5BH1wKvKN7PD8CCyuqGlDAwbWoxVGC7DueitvGngCTeMTVybu+oQYNIRYaIm0cw==
+expo-updates@^0.2.14:
+  version "0.2.14"
+  resolved "https://registry.yarnpkg.com/expo-updates/-/expo-updates-0.2.14.tgz#0cfbab6ebb8560b1955d888a7d4a31c643e7f3fd"
+  integrity sha512-/FNEDRSS7xxG+ql/vDdjPD6eAG63K9zbXsinYsu9Nrm06OhbB8MAx+OA4bMn+CZkvrQOzVJMhZ3oPvyOvEcmuQ==
   dependencies:
     "@expo/metro-config" "^0.1.16"
     fbemitter "^2.1.1"

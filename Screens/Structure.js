@@ -97,4 +97,105 @@ Tək sətr şərhləri <code class="one-line">//</code> ilə başlayır və yaz�
 Tək sətr şərhlərindən yazılmış əmr haqqında məlumat yazmaq üçün və yaxud aparılan əməliyyatı izah etməkçün istifadə olunur.
 `
 
-export default String(Structure) 
+const StructureEN = `
+#Structure
+The basic structure of the Arduino programming language is very simple and consists of at least two parts. These two parts are the functions required for the program to work. And functions consist of various commands.
+
+    void setup()
+    {
+        commands;
+    }
+
+    void loop()
+    {
+        commands;
+    }
+
+Here <code class="one-line">setup()</code> is a program preparation, and <code class="one-line">loop()</code> is a function that executes commands. Both functions must be specified when writing the program.
+
+At the beginning of the program, the variables to be used must be specified within the <code class="one-line">setup()</code> function. The setup function is the initial function of the program and is called only once during the execution of the program and can be used either for the <code class="one-line">pinMode()</code> (more information on the following topics) or to create a serial connection between the Arduino board and the computer.
+
+The loop function is called after the setup and constantly reads commands - input data, output signal, etc. executes. From this we can say that the loop function is the basis of all Arduino programs, and most of the executed program falls on it.
+
+
+#setup()
+The <code class="one-line">setup()</code> function is called only once during program execution, and can be used to assign pins on a board or to establish a serial connection. Even if there is no executable code block, the program must write the <code class="one-line">setup()</code> function. 
+
+    void setup()
+    {
+        pinMode(pin, OUTPUT); //sets pin as OUTPUT
+    }
+
+#loop()
+After the <code class="one-line">setup()</code> function is called, the <code class="one-line">loop()</code> function, as the name implies, loops sequentually to control the Arduino board, respond to external signals, etc. In short, the loop function is the basis of the Arduino program.
+
+    void loop()
+    {
+        digitalWrite(pin, HIGH); //turns pin on
+        delay(1000);             //pauses for 1 sec.
+        digitalWrite(pin, LOW);  //turns pin off
+        delay(1000);             //pauses for 1 sec.
+    }
+
+#Functions
+A function is a block of code with its own name and commands inside. These commands are executed when the function is called.
+There is enough information about the <code class="one-line">setup()</code> and <code class="one-line">loop()</code> functions, and we will talk about other pre-written functions in the following topics. 
+
+You can create functions yourself to solve any problem you want and eliminate confusion that may arise in the program. To do this, you must first determine the <b>type</b> of function. The output results of the functions correspond to the defined types, e.g. The result of a function of type <b>integer</b> will also be an integer. If no output is expected from the function, then the type of such function should be written as <b>void</b>.
+
+    type functionName(parameters)
+    {
+        commands;
+    }
+
+The <code class="one-line">delayVal()</code> function of the integer type shown below is designed to pause a program using a value read from a potentiometer. Initially, it defines the variable <b>"v"</b> within the function, equates the value of that variable to a value between 0-255 read from the potentiometer, and finally returns the value of the variable v as a result. 
+
+    int delayVal()
+    {
+        int v;               //temporary v variable
+        v = analogRead(pot); //read pot. value
+        v /= 4;              //converse 0-1023 to 0-255
+        return v;            //return final value
+    }
+
+#{}Curly braces
+Curly brackets define the beginning and end of function and condition blocks. 
+
+    type function()
+    {
+        commands;
+    }
+
+The open curly bracket must be closed. If left unchecked, this can lead to compilation errors that are difficult to find in the program. The best way to prevent this is to close the bracket as soon as you open it and write down the commands inside. 
+
+There is a convenient way to check this balance in an Arduino environment. Just select the open bracket, and the other half of it will be highlighted.
+
+#;Semicolon
+A semicolon is used to terminate any command, or to separate elements of a program. It is also used to separate commands in parentheses during <code class="one-line">for</code> loop in which it's mandatory. 
+
+    int x = 13; //x is equals to 13
+
+<p class="note"> Note: If a semicolon is not placed in the required place on any line, a compilation error may occur again, so it is better to put it on the place where the semicolon should be placed before writing the command. </p>
+
+#/*...*/Comments 
+A comment block is a field of text used to provide general information about a program or any operation to users. The program does not read the comment block and does not execute any line. These blocks start with <code class="one-line">/*</code> and end with <code class="one-line">*/</code>.
+
+    /* Do not forget
+       to close 
+       the comment block!
+    */
+
+
+#//Line comments
+Single line comments start with <code class="one-line">//</code> and convert the written line into a comment. Like the comment block, it is not read, executed, or stored by the program.
+
+    //an example for single line comments
+
+Single line comments are used to write information about a written command or to explain an operation.
+
+***
+`
+
+
+export default String(Structure)
+export { StructureEN } 

@@ -61,4 +61,71 @@ Massivlərdən əsasən <code class="one-line">for</code> dövründə istifadə 
 
 `
 
+const DatatypesEN = `
+#Datatypes
+
+##byte
+<code class="one-line">byte</code> stores 8-bit numerical value without decimal points. They have a range of <b>0</b> to <b>255</b>.
+
+    byte someVariable = 180;
+
+##int
+Integer shortly <code class="one-line">int</code>, is the primary datatype for storage of numbers without decimal points and store a 16-bit value with range of <b>32,767</b> to <b>-32,768</b>.
+
+    int someVariable = 1500;
+
+##long
+Extended size datatype for long integers, without decimal points, stored in a 32-bit value with range of <b>2,147,483,647</b> to <b>-2,147,483,648</b>.
+
+    long someVariable = 90000; 
+
+##float
+A datatype for floating-point numbers, or numbers that have a decimal point. Floating-point numbers have greater resolution than integers and are stored as a 32-bit value with a range of  <b>3.402823E+38</b> to <b>-3.4028235E+38</b>.
+
+    float someVariable = 3.14 
+
+
+<p class="note">Note: Floating-point numbers are not exact, and may yield strange results when compared. Floating point math is also much slower than integer math in performing calculations, so should be avoided if possible.</p> 
+
+##Arrays
+An array is a collection of values that are accessed with an index number. Any value in the array may be called upon by calling the name of the array and the index number of the value. Arrays are zero indexeeed, with the first value in the array beginning at index number 0. An array needs to be declared and optionally assigned values before they can be used. 
+
+    int myArray[] = {element0, element1...};
+
+Likewise it is possible to declare an array by declaring the array type and size and later assign values to an index position: 
+
+    int myArray[5];  //declares int array with
+                     //six positions
+    myArray[3] = 10; //assigns the 4th index
+                     //the value 10
+
+To retrieve a value from an array, assign a variable to the array and index position: 
+
+    x = myArray[3];  //x now equals 10
+
+Arrays are often used in <code class="one-line">setup()</code> loops, where the increment counter is also used as the index position for each array value. The following example uses an array to flicker an LED. Using a  <code class="one-line">setup()</code> loop, the counter begins at 0, writes the value contained at index position 0 in the array <code class="one-line">flicker[]</code>, in this case 180, to the PWM pin 10, pauses for 200ms, then moves to the next index position. 
+
+    int ledPin = 10;  //LED on pin 10
+    byte flicker[] = {180, 30, 255, 10, 90, 150, 60};
+    //array of 7 different values
+
+    void setup()
+    {
+        pinMode(ledPin, OUTPUT); //sets OUTPUT pin
+    }
+
+    void loop()
+    {
+        for(int i=0; i<7; i++) //loop equals number
+        {                      //of values in array
+            analogWrite(ledPin, flicker[i]); //writes index 
+            delay(200);                      //value pause 200ms
+        }
+    }
+
+
+`
+
+
 export default String(Datatypes)
+export { DatatypesEN }

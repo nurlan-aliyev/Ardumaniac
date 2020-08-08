@@ -57,4 +57,59 @@ Aşağıda göstərilən nümunədə 7-ci pini <code class="one-line">INPUT</cod
 ***
 `
 
+const DigitalIOEN = `
+#pinMode(pin,  mode), 
+#mode = OUTPUT/INPUT
+Used in <code class="one-line">void setup()</code> to configure a specified pin to behave either as an INPUT or an OUTPUT.
+
+    pinMode(pin, OUTPUT);  //sets pin as OUTPUT
+ 
+Arduino digital pins default to inputs, so they don't need to be explicitly declared as inputs with <code class="one-line">pinMode()</code>. Pins configured as <code class="one-line">INPUT</code> are said to be in high-impedance state.  
+
+There are also convenient 20k pullup resistors built into the Atmega chip can be accessed from software. These built-in pullup resistors are accesed in the following manner: 
+
+    pinMode(pin, INPUT);    //sets pin to input 
+    digitalWrite(pin, HIGH);//turn on pullup resistors
+
+Pins configured as <code class="one-line">OUTPUT</code> are said to be in a low-impedance state and can provide 40mA (milliamps) of current to other devices. This is enough current to brightly light up an LED, but not enough current to run most relays, solenids, or motors. 
+
+Short circuits on Arduino pins and excessive current can damage or destroy the output pin, or damage the entire Atmega chip. It is often a good idea to connect an <code class="one-line">OUTPUT</code> pin to an external device in series with a 470 or 1k ohms resistors.
+
+#digitalRead(pin)  
+Reads the value from a specified digital pin with the result either <code class="one-line">HIGH</code> or <code class="one-line">LOW</code>. The pin can be specified as either a variable or constant (0-13). 
+
+    qiymet = digitalRead(pin);  //sets 'value' 
+                                //equal to the 
+                                //input pin
+
+#digitalWrite(pin, qiymət)
+Outputs either logic level <code class="one-line">HIGH</code> or <code class="one-line">LOW</code> at a specified digital pin. The pin can be specified as either a variable or constant (0-13). 
+
+    digitalWrite(pin, HIGH);   //sets pin to HIGH
+
+The following example reads a pushbutton connected to a digitak input and turns on a LED connected to a digital output when the button has been pressed: 
+
+    int led = 13;     //LED on pin 13
+    int pin  = 7;     //pushbutton on pin 7
+    int value = 0;    //variablle to read value
+
+    void setup()
+    {
+        pinMode(led, OUTPUT);  //sets pin 13 as OUTPUT
+        pinMode(pin, INPUT);   //sets pin 7 as INPUT
+    }
+
+    void loop()
+    {
+        value = digitalRead(pin);  //sets value equal to
+                                   //the input pin
+        digitalWrite(led, value);  //sets led to the
+                                   //button's value
+                               
+    }
+
+***
+`
+
 export default String(DigitalIO)
+export { DigitalIOEN }

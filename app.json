@@ -1,15 +1,15 @@
 {
-  "name": "Ardunet",
-  "displayName": "Ardunet",
+  "name": "Ardunet.",
+  "displayName": "Ardunet.",
   "expo": {
-    "name": "Ardunet",
+    "name": "Ardunet.",
     "slug": "ardunet",
     "platforms": [
       "ios",
       "android",
       "web"
     ],
-    "version": "1.0.1",
+    "version": "1.1.1",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
     "splash": {
@@ -26,11 +26,11 @@
     "ios": {
       "supportsTablet": false,
       "bundleIdentifier": "site.ardumaniac.ardumaniac",
-      "buildNumber": "1.0.1"
+      "buildNumber": "1.1.1"
     },
     "android": {
       "package": "site.ardumaniac.ardumaniac",
-      "versionCode": 2,
+      "versionCode": 3,
       "config": {
         "googleMobileAdsAppId": "ca-app-pub-4610355671419976~1327858183"
       }

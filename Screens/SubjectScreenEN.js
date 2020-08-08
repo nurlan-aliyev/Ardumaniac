@@ -1,5 +1,5 @@
 import React from 'react'
-import { View, SafeAreaView, Dimensions } from 'react-native'
+import { View, SafeAreaView, Dimensions, Text } from 'react-native'
 import { createDrawerNavigator } from '@react-navigation/drawer';
 import {
     AdMobBanner,
@@ -9,19 +9,19 @@ import * as Updates from 'expo-updates';
 
 import Markdown from 'react-native-showdown';
 
-import WhatsArduino from './WhatsArduino.js'
-import Microcontrollers from './Microcontrollers.js'
-import ArduinoIDE from './ArduinoIDE.js'
-import ArduinoConnect from './ArduinoConnect.js'
-import Structure from './Structure.js'
-import Variables from './Variables.js'
-import Datatypes from './Datatypes.js'
-import Operators from './Operators.js'
-import Constants from './Constants.js'
-import Flowchart from './Flowchart.js'
-import DigitalIO from './Digitalio.js'
-import AnalogIO from './Analogio.js'
-import NecessaryFunctions from './NecessaryFunctions.js'
+import { WhatsArduinoEN } from './WhatsArduino.js'
+import { MicrocontrollersEN } from './Microcontrollers.js'
+import { ArduinoIDEEN } from './ArduinoIDE.js'
+import { ArduinoConnectEN } from './ArduinoConnect.js'
+import { StructureEN } from './Structure.js'
+import { VariablesEN } from './Variables.js'
+import { DatatypesEN } from './Datatypes.js'
+import { OperatorsEN } from './Operators.js'
+import { ConstantsEN } from './Constants.js'
+import { FlowchartEN } from './Flowchart.js'
+import { DigitalIOEN } from './Digitalio.js'
+import { AnalogIOEN } from './Analogio.js'
+import { NecessaryFunctionsEN } from './NecessaryFunctions.js'
 
 const sHeight = Dimensions.get('window').height
 
@@ -44,15 +44,12 @@ const css = `
 const Drawer = createDrawerNavigator()
 
 
-export default class SubjectScreen extends React.Component {
+export default class SubjectScreenEN extends React.Component {
     componentDidMount() {
         (async () => {
             try {
                 const update = await Updates.checkForUpdateAsync();
                 if (update.isAvailable) {
-                    this.setState({
-                        display: true
-                    })
                     await Updates.fetchUpdateAsync();
                     // ... notify user of update ...
                     await Updates.reloadAsync();
@@ -82,11 +79,11 @@ export default class SubjectScreen extends React.Component {
 
         return (
             <SafeAreaView style={{ flex: 1 }}>
-                <Markdown markdown={WhatsArduino} css={css} />
+                <Markdown markdown={WhatsArduinoEN} css={css} />
                 <View style={{ height: 'auto' }}>
                     <AdMobBanner
                         bannerSize="fullBanner"
-                        adUnitID="ca-app-pub-4610355671419976/3223210009"
+                        adUnitID="ca-app-pub-4610355671419976/7701694842"
                         onDidFailToReceiveAdWithError={this.bannerError}
                         onAdViewDidReceiveAd={this.bannerAdReceived} />
                 </View>
@@ -97,7 +94,7 @@ export default class SubjectScreen extends React.Component {
     PartTwo = () => {
         return (
             <SafeAreaView style={{ flex: 1 }}>
-                <Markdown markdown={Microcontrollers} css={css} />
+                <Markdown markdown={MicrocontrollersEN} css={css} />
             </SafeAreaView>
         )
     }
@@ -105,7 +102,7 @@ export default class SubjectScreen extends React.Component {
     PartThree = () => {
         return (
             <SafeAreaView style={{ flex: 1 }}>
-                <Markdown markdown={ArduinoConnect} css={css} />
+                <Markdown markdown={ArduinoConnectEN} css={css} />
                 <AdMobBanner
                     bannerSize="fullBanner"
                     adUnitID="ca-app-pub-4610355671419976/7701694842"
@@ -117,7 +114,7 @@ export default class SubjectScreen extends React.Component {
     PartFour = () => {
         return (
             <SafeAreaView style={{ flex: 1 }}>
-                <Markdown markdown={ArduinoIDE} css={css} />
+                <Markdown markdown={ArduinoIDEEN} css={css} />
             </SafeAreaView>
         )
     }
@@ -125,7 +122,7 @@ export default class SubjectScreen extends React.Component {
     PartFive = () => {
         return (
             <SafeAreaView style={{ flex: 1 }}>
-                <Markdown markdown={Structure} css={css} />
+                <Markdown markdown={StructureEN} css={css} />
                 <AdMobBanner
                     bannerSize="fullBanner"
                     adUnitID="ca-app-pub-4610355671419976/7701694842"
@@ -137,14 +134,14 @@ export default class SubjectScreen extends React.Component {
     PartSix = () => {
         return (
             <SafeAreaView style={{ flex: 1 }}>
-                <Markdown markdown={Variables} css={css} />
+                <Markdown markdown={VariablesEN} css={css} />
             </SafeAreaView>
         )
     }
     PartSeven = () => {
         return (
             <SafeAreaView style={{ flex: 1 }}>
-                <Markdown markdown={Datatypes} css={css} />
+                <Markdown markdown={DatatypesEN} css={css} />
                 <AdMobBanner
                     bannerSize="fullBanner"
                     adUnitID="ca-app-pub-4610355671419976/7701694842"
@@ -156,21 +153,21 @@ export default class SubjectScreen extends React.Component {
     PartEight = () => {
         return (
             <SafeAreaView style={{ flex: 1 }}>
-                <Markdown markdown={Operators} css={css} />
+                <Markdown markdown={OperatorsEN} css={css} />
             </SafeAreaView>
         )
     }
     PartNine = () => {
         return (
             <SafeAreaView style={{ flex: 1 }}>
-                <Markdown markdown={Constants} css={css} />
+                <Markdown markdown={ConstantsEN} css={css} />
             </SafeAreaView>
         )
     }
     PartTen = () => {
         return (
             <SafeAreaView style={{ flex: 1 }}>
-                <Markdown markdown={Flowchart} css={css} />
+                <Markdown markdown={FlowchartEN} css={css} />
                 <AdMobBanner
                     bannerSize="fullBanner"
                     adUnitID="ca-app-pub-4610355671419976/7701694842"
@@ -182,14 +179,14 @@ export default class SubjectScreen extends React.Component {
     PartEleven = () => {
         return (
             <SafeAreaView style={{ flex: 1 }}>
-                <Markdown markdown={DigitalIO} css={css} />
+                <Markdown markdown={DigitalIOEN} css={css} />
             </SafeAreaView>
         )
     }
     PartTwelve = () => {
         return (
             <SafeAreaView style={{ flex: 1 }}>
-                <Markdown markdown={AnalogIO} css={css} />
+                <Markdown markdown={AnalogIOEN} css={css} />
                 <AdMobBanner
                     bannerSize="fullBanner"
                     adUnitID="ca-app-pub-4610355671419976/7701694842"
@@ -201,7 +198,7 @@ export default class SubjectScreen extends React.Component {
     PartThirteen = () => {
         return (
             <SafeAreaView style={{ flex: 1 }}>
-                <Markdown markdown={NecessaryFunctions} css={css} />
+                <Markdown markdown={NecessaryFunctionsEN} css={css} />
                 <AdMobBanner
                     bannerSize="fullBanner"
                     adUnitID="ca-app-pub-4610355671419976/7701694842"
@@ -217,19 +214,19 @@ export default class SubjectScreen extends React.Component {
                 initialRouteName="PartOne"
                 drawerPosition='right'
             >
-                <Drawer.Screen name='Arduino nədir və hardan gəldi?' component={this.PartOne} />
-                <Drawer.Screen name='Mikrokontrollerlər haqqında' component={this.PartTwo} />
-                <Drawer.Screen name='Arduinonun qoşulması' component={this.PartThree} />
-                <Drawer.Screen name='Arduino IDE-nin endirilməsi' component={this.PartFour} />
-                <Drawer.Screen name='Proqramlaşdırma: Struktur' component={this.PartFive} />
-                <Drawer.Screen name='Dəyişənlər' component={this.PartSix} />
-                <Drawer.Screen name='Verilənlərin növləri' component={this.PartSeven} />
-                <Drawer.Screen name='Operatorlar' component={this.PartEight} />
-                <Drawer.Screen name='Sabitlər' component={this.PartNine} />
-                <Drawer.Screen name='Dövr və şərt blokları' component={this.PartTen} />
-                <Drawer.Screen name='Rəqəmsal giriş/çıxış' component={this.PartEleven} />
-                <Drawer.Screen name='Analoq giriş/çıxış' component={this.PartTwelve} />
-                <Drawer.Screen name='Bəzi lazımi funksiyalar' component={this.PartThirteen} />
+                <Drawer.Screen name='What is Arduino?' component={this.PartOne} />
+                <Drawer.Screen name='About Microcontrollers' component={this.PartTwo} />
+                <Drawer.Screen name='Connecting Arduino' component={this.PartThree} />
+                <Drawer.Screen name='Downloading Arduino IDE' component={this.PartFour} />
+                <Drawer.Screen name='Programming: Structure' component={this.PartFive} />
+                <Drawer.Screen name='Variables' component={this.PartSix} />
+                <Drawer.Screen name='Datatypes' component={this.PartSeven} />
+                <Drawer.Screen name='Operators' component={this.PartEight} />
+                <Drawer.Screen name='Constants' component={this.PartNine} />
+                <Drawer.Screen name='Flow chart' component={this.PartTen} />
+                <Drawer.Screen name='Digital I/O' component={this.PartEleven} />
+                <Drawer.Screen name='Analog I/O' component={this.PartTwelve} />
+                <Drawer.Screen name='Some necessary functions' component={this.PartThirteen} />
             </Drawer.Navigator>
         )
     }

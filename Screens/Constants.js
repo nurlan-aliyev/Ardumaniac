@@ -29,4 +29,32 @@ Bu sabitlər <code class="one-line">pinMode</code> vasitəsi ilə lövhədə mö
 
 `
 
+const ConstantsEN = `
+#Constants
+The Arduino language has a few predefined values, which are called constants. They are used to make the programs easier to read. Constants are classified in group.  
+
+#true/false
+These are Boolean constants that define logic levels. <code class="one-line">FALSE</code> is easily defined as <b>0</b>(zero) while <code class="one-line">TRUE</code> is often defined as 1, but can also be anything else except zero. So in a Boolean sense, -1, 2 and -200 are all also defined as <code class="one-line">TRUE</code>.  
+
+    if (b == TRUE)      //if true 
+    {
+        doSomething;
+    }
+
+#high/low
+These constants define pin levels as <code class="one-line">HIGH</code> or <code class="one-line">LOW</code> and are used when reading or writing to digital pins. <code class="one-line">HIGH</code> is defined as logic level 1, <strong>ON</strong>, or 5 volts while <code class="one-line">LOW</code> is logic level 0, <strong>OFF</strong>, or 0 volts. 
+
+    digitalWrite(13, HIGH); 
+
+#input/output 
+Constants used with the <code class="one-line">pinMode()</code> function to define the mode of a digital pin as either <code class="one-line">INPUT</code> or <code class="one-line">OUTPUT</code>. 
+
+    pinMode(13, OUTPUT); 
+
+***
+
+`
+
+
 export default String(Constants)
+export { ConstantsEN }
