@@ -32,7 +32,7 @@
       "package": "site.ardumaniac.ardumaniac",
       "versionCode": 3,
       "config": {
-        "googleMobileAdsAppId": "ca-app-pub-4610355671419976~1327858183"
+        "googleMobileAdsAppId": "ca-app-pub-1789969122261375~6962874962"
       }
     },
     "entryPoint": "node_modules/expo/AppEntry.js",

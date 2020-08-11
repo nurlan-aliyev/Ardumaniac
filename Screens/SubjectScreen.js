@@ -1,10 +1,7 @@
 import React from 'react'
-import { View, SafeAreaView, Dimensions } from 'react-native'
+import { View, SafeAreaView, Dimensions, ToastAndroid } from 'react-native'
 import { createDrawerNavigator } from '@react-navigation/drawer';
-import {
-    AdMobBanner,
-    setTestDeviceIDAsync,
-} from 'expo-ads-admob';
+
 import * as Updates from 'expo-updates';
 
 import Markdown from 'react-native-showdown';
@@ -45,16 +42,18 @@ const Drawer = createDrawerNavigator()
 
 
 export default class SubjectScreen extends React.Component {
+
+    showToast = () => {
+        ToastAndroid.show('Proqram təminatı avtomatik olaraq yenilənir!', ToastAndroid.SHORT)
+    }
     componentDidMount() {
         (async () => {
             try {
                 const update = await Updates.checkForUpdateAsync();
                 if (update.isAvailable) {
-                    this.setState({
-                        display: true
-                    })
                     await Updates.fetchUpdateAsync();
                     // ... notify user of update ...
+                    this.showToast()
                     await Updates.reloadAsync();
                 }
             } catch (e) {
@@ -65,31 +64,12 @@ export default class SubjectScreen extends React.Component {
         })();
     }
 
-    initAds = async () => {
-        await setTestDeviceIDAsync('EMULATOR');
-    }
-
-    bannerError(e) {
-        console.log('banner error: ');
-        console.log(e);
-    }
-    bannerAdReceived = () => {
-        console.log('banner ad received: ');
-    }
-
 
     PartOne = () => {
 
         return (
             <SafeAreaView style={{ flex: 1 }}>
                 <Markdown markdown={WhatsArduino} css={css} />
-                {/*<View style={{ height: 'auto' }}>
-                    <AdMobBanner
-                        bannerSize="fullBanner"
-                        adUnitID="ca-app-pub-4610355671419976/3223210009"
-                        onDidFailToReceiveAdWithError={this.bannerError}
-                        onAdViewDidReceiveAd={this.bannerAdReceived} />
-        </View>*/}
             </SafeAreaView>
         )
     }
@@ -106,11 +86,6 @@ export default class SubjectScreen extends React.Component {
         return (
             <SafeAreaView style={{ flex: 1 }}>
                 <Markdown markdown={ArduinoConnect} css={css} />
-                {/*<AdMobBanner
-                    bannerSize="fullBanner"
-                    adUnitID="ca-app-pub-4610355671419976/7701694842"
-                    onDidFailToReceiveAdWithError={this.bannerError}
-                    onAdViewDidReceiveAd={this.bannerAdReceived} />*/}
             </SafeAreaView>
         )
     }
@@ -126,11 +101,6 @@ export default class SubjectScreen extends React.Component {
         return (
             <SafeAreaView style={{ flex: 1 }}>
                 <Markdown markdown={Structure} css={css} />
-                {/*<AdMobBanner
-                    bannerSize="fullBanner"
-                    adUnitID="ca-app-pub-4610355671419976/7701694842"
-                    onDidFailToReceiveAdWithError={this.bannerError}
-                    onAdViewDidReceiveAd={this.bannerAdReceived} />*/}
             </SafeAreaView>
         )
     }
@@ -145,11 +115,6 @@ export default class SubjectScreen extends React.Component {
         return (
             <SafeAreaView style={{ flex: 1 }}>
                 <Markdown markdown={Datatypes} css={css} />
-                {/*<AdMobBanner
-                    bannerSize="fullBanner"
-                    adUnitID="ca-app-pub-4610355671419976/7701694842"
-                    onDidFailToReceiveAdWithError={this.bannerError}
-                    onAdViewDidReceiveAd={this.bannerAdReceived} />*/}
             </SafeAreaView>
         )
     }
@@ -171,11 +136,6 @@ export default class SubjectScreen extends React.Component {
         return (
             <SafeAreaView style={{ flex: 1 }}>
                 <Markdown markdown={Flowchart} css={css} />
-                {/*<AdMobBanner
-                    bannerSize="fullBanner"
-                    adUnitID="ca-app-pub-4610355671419976/7701694842"
-                    onDidFailToReceiveAdWithError={this.bannerError}
-                    onAdViewDidReceiveAd={this.bannerAdReceived} />*/}
             </SafeAreaView>
         )
     }
@@ -190,11 +150,6 @@ export default class SubjectScreen extends React.Component {
         return (
             <SafeAreaView style={{ flex: 1 }}>
                 <Markdown markdown={AnalogIO} css={css} />
-                {/*<AdMobBanner
-                    bannerSize="fullBanner"
-                    adUnitID="ca-app-pub-4610355671419976/7701694842"
-                    onDidFailToReceiveAdWithError={this.bannerError}
-                    onAdViewDidReceiveAd={this.bannerAdReceived} />*/}
             </SafeAreaView>
         )
     }
@@ -202,11 +157,6 @@ export default class SubjectScreen extends React.Component {
         return (
             <SafeAreaView style={{ flex: 1 }}>
                 <Markdown markdown={NecessaryFunctions} css={css} />
-                {/*<AdMobBanner
-                    bannerSize="fullBanner"
-                    adUnitID="ca-app-pub-4610355671419976/7701694842"
-                    onDidFailToReceiveAdWithError={this.bannerError}
-                    onAdViewDidReceiveAd={this.bannerAdReceived} />*/}
             </SafeAreaView>
         )
     }

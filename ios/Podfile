@@ -43,4 +43,6 @@ target 'ardumaniac' do
 
   # react-native-cli autolinking
   use_native_modules!
+  pod 'react-native-admob', :path => '../node_modules/react-native-admob'
+
 end

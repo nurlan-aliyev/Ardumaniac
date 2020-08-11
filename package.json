@@ -20,6 +20,7 @@
     "react-code-blocks": "^0.0.8",
     "react-dom": "16.11.0",
     "react-native": "0.62.2",
+    "react-native-admob": "^2.0.0-beta.6",
     "react-native-file-viewer": "^2.1.1",
     "react-native-gesture-handler": "~1.6.0",
     "react-native-markdown-renderer": "^3.2.8",
