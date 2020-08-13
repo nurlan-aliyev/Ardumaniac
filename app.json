@@ -26,11 +26,11 @@
     "ios": {
       "supportsTablet": false,
       "bundleIdentifier": "site.ardumaniac.ardumaniac",
-      "buildNumber": "1.1.1"
+      "buildNumber": "1.2.1"
     },
     "android": {
       "package": "site.ardumaniac.ardumaniac",
-      "versionCode": 3,
+      "versionCode": 4,
       "config": {
         "googleMobileAdsAppId": "ca-app-pub-1789969122261375~6962874962"
       }

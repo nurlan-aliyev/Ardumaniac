@@ -1,8 +1,10 @@
 import React from 'react'
 import { View, SafeAreaView, Dimensions, ToastAndroid } from 'react-native'
 import { createDrawerNavigator } from '@react-navigation/drawer';
-
+import DrawerContent from './DrawerContent.js'
 import * as Updates from 'expo-updates';
+
+import { Icon } from 'react-native-elements'
 
 import Markdown from 'react-native-showdown';
 
@@ -166,20 +168,198 @@ export default class SubjectScreen extends React.Component {
             <Drawer.Navigator
                 initialRouteName="PartOne"
                 drawerPosition='right'
+                drawerStyle={{
+                    width: 285
+                }}
+                drawerContent={props => <DrawerContent {...props} />}
+                drawerContentOptions={{
+                    itemStyle: { marginHorizontal: 5 },
+                    labelStyle: { margin: 0, paddingHorizontal: 0, position: 'relative', left: -25 }
+                }}
+
             >
-                <Drawer.Screen name='Arduino nədir və hardan gəldi?' component={this.PartOne} />
-                <Drawer.Screen name='Mikrokontrollerlər haqqında' component={this.PartTwo} />
-                <Drawer.Screen name='Arduinonun qoşulması' component={this.PartThree} />
-                <Drawer.Screen name='Arduino IDE-nin endirilməsi' component={this.PartFour} />
-                <Drawer.Screen name='Proqramlaşdırma: Struktur' component={this.PartFive} />
-                <Drawer.Screen name='Dəyişənlər' component={this.PartSix} />
-                <Drawer.Screen name='Verilənlərin növləri' component={this.PartSeven} />
-                <Drawer.Screen name='Operatorlar' component={this.PartEight} />
-                <Drawer.Screen name='Sabitlər' component={this.PartNine} />
-                <Drawer.Screen name='Dövr və şərt blokları' component={this.PartTen} />
-                <Drawer.Screen name='Rəqəmsal giriş/çıxış' component={this.PartEleven} />
-                <Drawer.Screen name='Analoq giriş/çıxış' component={this.PartTwelve} />
-                <Drawer.Screen name='Bəzi lazımi funksiyalar' component={this.PartThirteen} />
+                <Drawer.Screen
+                    name='Arduino nədir və hardan gəldi?'
+                    component={this.PartOne}
+                    options={{
+                        drawerIcon: ({ focused, size }) => (
+                            <Icon
+                                size={20}
+                                name="home"
+                                type='font-awesome'
+                                color={focused ? '#00979d' : 'gray'}
+                            />
+                        ),
+                    }}
+                />
+                <Drawer.Screen
+                    name='Mikrokontrollerlər haqqında'
+                    component={this.PartTwo}
+                    options={{
+                        drawerIcon: ({ focused, size }) => (
+                            <Icon
+                                size={20}
+                                name="microchip"
+                                type='font-awesome'
+                                color={focused ? '#00979d' : 'gray'}
+                            />
+                        ),
+                    }}
+                />
+                <Drawer.Screen
+                    name='Arduinonun qoşulması'
+                    component={this.PartThree}
+                    options={{
+                        drawerIcon: ({ focused, size }) => (
+                            <Icon
+                                size={20}
+                                name="desktop"
+                                type='font-awesome'
+                                color={focused ? '#00979d' : 'gray'}
+                            />
+                        ),
+                    }}
+                />
+                <Drawer.Screen
+                    name='Arduino IDE-nin endirilməsi'
+                    component={this.PartFour}
+                    options={{
+                        drawerIcon: ({ focused, size }) => (
+                            <Icon
+                                size={20}
+                                name="file-download"
+                                type='material-community'
+                                color={focused ? '#00979d' : 'gray'}
+                            />
+                        ),
+                    }}
+                />
+                <Drawer.Screen
+                    name='Proqramlaşdırma: Struktur'
+                    component={this.PartFive}
+                    options={{
+                        drawerIcon: ({ focused, size }) => (
+                            <Icon
+                                size={20}
+                                name="code"
+                                type='font-awesome'
+                                color={focused ? '#00979d' : 'gray'}
+                            />
+                        ),
+                    }}
+                />
+                <Drawer.Screen
+                    name='Dəyişənlər'
+                    component={this.PartSix}
+                    options={{
+                        drawerIcon: ({ focused, size }) => (
+                            <Icon
+                                size={20}
+                                name="variable"
+                                type='material-community'
+                                color={focused ? '#00979d' : 'gray'}
+                            />
+                        ),
+                    }}
+                />
+                <Drawer.Screen
+                    name='Verilənlərin növləri'
+                    component={this.PartSeven}
+                    options={{
+                        drawerIcon: ({ focused, size }) => (
+                            <Icon
+                                size={20}
+                                name="variable"
+                                type='material-community'
+                                color={focused ? '#00979d' : 'gray'}
+                            />
+                        ),
+                    }}
+                />
+                <Drawer.Screen
+                    name='Operatorlar'
+                    component={this.PartEight}
+                    options={{
+                        drawerIcon: ({ focused, size }) => (
+                            <Icon
+                                size={20}
+                                name="plus-minus"
+                                type='material-community'
+                                color={focused ? '#00979d' : 'gray'}
+                            />
+                        ),
+                    }}
+                />
+                <Drawer.Screen
+                    name='Sabitlər'
+                    component={this.PartNine}
+                    options={{
+                        drawerIcon: ({ focused, size }) => (
+                            <Icon
+                                size={20}
+                                name="code"
+                                type='font-awesome'
+                                color={focused ? '#00979d' : 'gray'}
+                            />
+                        ),
+                    }}
+                />
+                <Drawer.Screen
+                    name='Dövr və şərt blokları'
+                    component={this.PartTen}
+                    options={{
+                        drawerIcon: ({ focused, size }) => (
+                            <Icon
+                                size={20}
+                                name="code"
+                                type='font-awesome'
+                                color={focused ? '#00979d' : 'gray'}
+                            />
+                        ),
+                    }}
+                />
+                <Drawer.Screen
+                    name='Rəqəmsal giriş/çıxış'
+                    component={this.PartEleven}
+                    options={{
+                        drawerIcon: ({ focused, size }) => (
+                            <Icon
+                                size={20}
+                                name="code"
+                                type='font-awesome'
+                                color={focused ? '#00979d' : 'gray'}
+                            />
+                        ),
+                    }}
+                />
+                <Drawer.Screen
+                    name='Analoq giriş/çıxış'
+                    component={this.PartTwelve}
+                    options={{
+                        drawerIcon: ({ focused, size }) => (
+                            <Icon
+                                size={20}
+                                name="code"
+                                type='font-awesome'
+                                color={focused ? '#00979d' : 'gray'}
+                            />
+                        ),
+                    }}
+                />
+                <Drawer.Screen
+                    name='Bəzi lazımi funksiyalar'
+                    component={this.PartThirteen}
+                    options={{
+                        drawerIcon: ({ focused, size }) => (
+                            <Icon
+                                size={20}
+                                name="function"
+                                type='material-community'
+                                color={focused ? '#00979d' : 'gray'}
+                            />
+                        ),
+                    }}
+                />
             </Drawer.Navigator>
         )
     }

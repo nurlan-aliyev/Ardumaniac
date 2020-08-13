@@ -5,7 +5,8 @@ import {
     AdMobBanner,
 } from "expo-ads-admob"
 import * as Updates from 'expo-updates';
-
+import { Icon } from 'react-native-elements'
+import DrawerContent from './DrawerContent.js'
 import Markdown from 'react-native-showdown';
 
 import { WhatsArduinoEN } from './WhatsArduino.js'
@@ -45,16 +46,6 @@ const Drawer = createDrawerNavigator()
 
 export default class SubjectScreenEN extends React.Component {
 
-    state = {
-        adAvailable: true
-    }
-
-    adStateToggler = () => {
-        this.setState(prevState => ({
-            adAvailable: prevState.adAvailable === true ? false : true
-        }))
-    }
-
     showToast = () => {
         ToastAndroid.show("App is being updated!", ToastAndroid.SHORT);
     }
@@ -82,12 +73,10 @@ export default class SubjectScreenEN extends React.Component {
     }
 
     bannerError = (e) => {
-        this.adStateToggler()
         console.log('banner error: ');
         console.log(e);
     }
     bannerAdReceived = () => {
-        this.adStateToggler()
         console.log('banner ad received: ');
     }
 
@@ -264,20 +253,197 @@ export default class SubjectScreenEN extends React.Component {
             <Drawer.Navigator
                 initialRouteName="PartOne"
                 drawerPosition='right'
+                drawerStyle={{
+                    width: 285
+                }}
+                drawerContent={props => <DrawerContent {...props} />}
+                drawerContentOptions={{
+                    itemStyle: { marginHorizontal: 5 },
+                    labelStyle: { margin: 0, paddingHorizontal: 0, position: 'relative', left: -25 }
+                }}
             >
-                <Drawer.Screen name='What is Arduino?' component={this.PartOne} />
-                <Drawer.Screen name='About Microcontrollers' component={this.PartTwo} />
-                <Drawer.Screen name='Connecting Arduino' component={this.PartThree} />
-                <Drawer.Screen name='Downloading Arduino IDE' component={this.PartFour} />
-                <Drawer.Screen name='Programming: Structure' component={this.PartFive} />
-                <Drawer.Screen name='Variables' component={this.PartSix} />
-                <Drawer.Screen name='Datatypes' component={this.PartSeven} />
-                <Drawer.Screen name='Operators' component={this.PartEight} />
-                <Drawer.Screen name='Constants' component={this.PartNine} />
-                <Drawer.Screen name='Flow chart' component={this.PartTen} />
-                <Drawer.Screen name='Digital I/O' component={this.PartEleven} />
-                <Drawer.Screen name='Analog I/O' component={this.PartTwelve} />
-                <Drawer.Screen name='Some necessary functions' component={this.PartThirteen} />
+                <Drawer.Screen
+                    name='What is Arduino?'
+                    component={this.PartOne}
+                    options={{
+                        drawerIcon: ({ focused, size }) => (
+                            <Icon
+                                size={20}
+                                name="home"
+                                type='font-awesome'
+                                color={focused ? '#00979d' : 'gray'}
+                            />
+                        ),
+                    }}
+                />
+                <Drawer.Screen
+                    name='About Microcontrollers'
+                    component={this.PartTwo}
+                    options={{
+                        drawerIcon: ({ focused, size }) => (
+                            <Icon
+                                size={20}
+                                name="microchip"
+                                type='font-awesome'
+                                color={focused ? '#00979d' : 'gray'}
+                            />
+                        ),
+                    }}
+                />
+                <Drawer.Screen
+                    name='Connecting Arduino'
+                    component={this.PartThree}
+                    options={{
+                        drawerIcon: ({ focused, size }) => (
+                            <Icon
+                                size={20}
+                                name="desktop"
+                                type='font-awesome'
+                                color={focused ? '#00979d' : 'gray'}
+                            />
+                        ),
+                    }}
+                />
+                <Drawer.Screen
+                    name='Downloading Arduino IDE'
+                    component={this.PartFour}
+                    options={{
+                        drawerIcon: ({ focused, size }) => (
+                            <Icon
+                                size={20}
+                                name="file-download"
+                                type='material-community'
+                                color={focused ? '#00979d' : 'gray'}
+                            />
+                        ),
+                    }}
+                />
+                <Drawer.Screen
+                    name='Programming: Structure'
+                    component={this.PartFive}
+                    options={{
+                        drawerIcon: ({ focused, size }) => (
+                            <Icon
+                                size={20}
+                                name="code"
+                                type='font-awesome'
+                                color={focused ? '#00979d' : 'gray'}
+                            />
+                        ),
+                    }}
+                />
+                <Drawer.Screen
+                    name='Variables'
+                    component={this.PartSix}
+                    options={{
+                        drawerIcon: ({ focused, size }) => (
+                            <Icon
+                                size={20}
+                                name="variable"
+                                type='material-community'
+                                color={focused ? '#00979d' : 'gray'}
+                            />
+                        ),
+                    }}
+                />
+                <Drawer.Screen
+                    name='Datatypes'
+                    component={this.PartSeven}
+                    options={{
+                        drawerIcon: ({ focused, size }) => (
+                            <Icon
+                                size={20}
+                                name="variable"
+                                type='material-community'
+                                color={focused ? '#00979d' : 'gray'}
+                            />
+                        ),
+                    }}
+                />
+                <Drawer.Screen
+                    name='Operators'
+                    component={this.PartEight}
+                    options={{
+                        drawerIcon: ({ focused, size }) => (
+                            <Icon
+                                size={20}
+                                name="plus-minus"
+                                type='material-community'
+                                color={focused ? '#00979d' : 'gray'}
+                            />
+                        ),
+                    }}
+                />
+                <Drawer.Screen
+                    name='Constants'
+                    component={this.PartNine}
+                    options={{
+                        drawerIcon: ({ focused, size }) => (
+                            <Icon
+                                size={20}
+                                name="code"
+                                type='font-awesome'
+                                color={focused ? '#00979d' : 'gray'}
+                            />
+                        ),
+                    }}
+                />
+                <Drawer.Screen
+                    name='Flow chart'
+                    component={this.PartTen}
+                    options={{
+                        drawerIcon: ({ focused, size }) => (
+                            <Icon
+                                size={20}
+                                name="code"
+                                type='font-awesome'
+                                color={focused ? '#00979d' : 'gray'}
+                            />
+                        ),
+                    }}
+                />
+                <Drawer.Screen
+                    name='Digital I/O'
+                    component={this.PartEleven}
+                    options={{
+                        drawerIcon: ({ focused, size }) => (
+                            <Icon
+                                size={20}
+                                name="code"
+                                type='font-awesome'
+                                color={focused ? '#00979d' : 'gray'}
+                            />
+                        ),
+                    }}
+                />
+                <Drawer.Screen
+                    name='Analog I/O'
+                    component={this.PartTwelve}
+                    options={{
+                        drawerIcon: ({ focused, size }) => (
+                            <Icon
+                                size={20}
+                                name="code"
+                                type='font-awesome'
+                                color={focused ? '#00979d' : 'gray'}
+                            />
+                        ),
+                    }}
+                />
+                <Drawer.Screen
+                    name='Some necessary functions'
+                    component={this.PartThirteen}
+                    options={{
+                        drawerIcon: ({ focused, size }) => (
+                            <Icon
+                                size={20}
+                                name="function"
+                                type='material-community'
+                                color={focused ? '#00979d' : 'gray'}
+                            />
+                        ),
+                    }}
+                />
             </Drawer.Navigator>
         )
     }
